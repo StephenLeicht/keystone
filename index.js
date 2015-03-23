@@ -8,7 +8,7 @@ var fs = require('fs'),
 	numeral = require('numeral'),
 	cloudinary = require('cloudinary'),
 	utils = require('keystone-utils'),
-	prepost = require('./lib/prepost');
+	grappling = require('grappling-hook');
 
 var templateCache = {};
 
@@ -34,7 +34,6 @@ var moduleRoot = (function(_rootPath) {
 var Keystone = function() {
 	prepost.mixin(this)
 		.register('pre:routes', 'pre:render');
-	
 	this.stores = {};
 	this.lists = {};
 	this.paths = {};
